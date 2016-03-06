@@ -1,0 +1,22 @@
+{
+  "name": "karna",
+  "version": "1.0.0",
+  "description": "Everything on objects",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinothbabu/karna.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vinothbabu/karna/issues"
+  },
+  "homepage": "https://github.com/vinothbabu/karna#readme"
+}
