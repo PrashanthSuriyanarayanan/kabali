@@ -52,7 +52,7 @@ Example:
 
 ```
 var output = kabali([2,1,3,6,2,9]).findByValues(9,1,2).result();
-console.log(dataset);
+console.log(output);
 //returns [2,2,1,9];
 ```
 
