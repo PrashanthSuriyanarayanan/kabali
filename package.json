@@ -1,6 +1,6 @@
 {
-  "name": "karna",
-  "version": "1.0.0",
+  "name": "Kabali",
+  "version": "0.0.1",
   "description": "Everything on objects",
   "main": "index.js",
   "directories": {
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/vinothbabu/karna/issues"
   },
-  "homepage": "https://github.com/vinothbabu/karna#readme"
+  "homepage": "https://github.com/vinothbabu/karna#readme",
+  "devDependencies": {
+    "chai": "^3.5.0"   
+  }
 }
