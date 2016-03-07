@@ -95,6 +95,21 @@ Kabali.prototype.findMultipleValues = function() {
   return this;
 };
 
+Kabali.prototype.after = function () {
+  var result = [];
+  if(!this.check() || arguments.length > 1) {
+    this.value = result;
+    return this;
+  }
+  var list = this.value;
+  var pos = list.indexOf(arguments[0]);
+  if(pos !== -1) {
+    result = list.splice(pos + 1);
+  }
+  this.value = result;
+  return this;
+};
+
 Kabali.prototype.getPrototypeChain = function() {};
 
 Kabali.prototype.result = function() {
