@@ -97,20 +97,30 @@ Kabali.prototype.findMultipleValues = function() {
 
 Kabali.prototype.after = function () {
   var result = [];
-  if(!this.check() || arguments.length > 1) {
-    this.value = result;
-    return this;
-  }
-  var list = this.value;
-  var pos = list.indexOf(arguments[0]);
-  if(pos !== -1) {
-    result = list.splice(pos + 1);
+  if(this.check() && arguments.length < 2) {
+    var list = this.value;
+    var pos = list.indexOf(arguments[0]);
+    if(pos !== -1) {
+      result = list.splice(pos + 1);
+    }
   }
   this.value = result;
   return this;
 };
 
-Kabali.prototype.getPrototypeChain = function() {};
+Kabali.prototype.getPrototypeChain = function() {
+  var list = [];
+  var self = this;
+  return function recursiveFn(obj, list) {
+    if(obj !== undefined && obj !== null && obj.__proto__) {
+      list.push(obj.__proto__.constructor.name);
+      return recursiveFn(obj.__proto__, list);
+    }
+    self.value = list;
+    list = null;
+    return self;
+  }(self.value, list);
+};
 
 Kabali.prototype.result = function() {
   return this.value;

@@ -27,11 +27,33 @@ function Pandaram() {
 
 Pandaram.prototype = Object.create(Thalaivar.prototype)
 
-kabali(new Thalaivar()).getPrototypeChain.result();
-// => [Thalaivar.prototype, Object.prototype]
+kabali(new Thalaivar()).getPrototypeChain().result();
+// => ['Thalaivar', 'Object']
 
-kabali(new Pandaram()).getPrototypeChain.result();
-// => [Pandaram.prototype, Thalaivar.prototype, Object.prototype]
+kabali(new Pandaram()).getPrototypeChain().result();
+// => ['Pandaram', 'Thalaivar', 'Object']
+
+kabali(0).getPrototypeChain().result();
+// => [ 'Number', 'Object' ]
+
+kabali('0').getPrototypeChain().result();
+// => [ 'String', 'Object' ]
+```
+
+### `.after([int|string|object])`
+Returns the remaining items after the input item in an array.
+
+Example:
+
+```
+kabali([6,7,1,3,6,2]).after(3).result();
+// => [6,2];
+
+kabali([6,7,1,3,6,2]).after(2).result();
+// => [];
+
+kabali([6,7,1,3,6,2]).after(6).result();
+// => [7,1,3,6,2];
 ```
 
 ### `.findValue([int|string])`
